@@ -64,6 +64,7 @@ function HomeScreen({navigation}): JSX.Element {
 
         if (err.message === 'Network Error') {
           setError([err?.message]);
+          Tts.speak(err?.message + ' please check your connection');
         } else {
           if (err?.response?.data?.content) {
             setError([err?.response?.data?.content]);
